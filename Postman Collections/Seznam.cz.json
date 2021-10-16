@@ -1,0 +1,59 @@
+{
+  "info": {
+    "_postman_id": "86f95e7a-af10-489e-b9d9-3ca86c076b61",
+    "name": "Seznam.cz",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "www.seznam.cz",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "1fef7e9d-fab4-4487-93f1-d996ee1593eb",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Body matches seznam.cz\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"seznam.cz\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Body matches data-dot\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"data-dot\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Body matches radio\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"radio\");\r",
+              "});\r",
+              "\r",
+              "\r",
+              "pm.test(\"Content-Type is present\", function () {\r",
+              "    pm.response.to.have.header(\"Content-Type\");\r",
+              "});\r",
+              "pm.test(\"Successful POST request\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+              "});\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "5500b022-5aae-4290-a15e-8541cf2fc506",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "www.seznam.cz"
+      },
+      "response": []
+    }
+  ]
+}
